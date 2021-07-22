@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  margin: 30px auto;
+  width: 550px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #23c75a;
+}
+
+.money.minus {
+  color: #dc2727;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+#amount {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #9c88ff;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.less {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 200px;
+  align-items: center;
+}
+
+.more {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 150px;
+  align-items: center;
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.more li,
+.less li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.more li.plus,
+.less li.plus {
+  border-right: 5px solid #23c75a;
+}
+
+.more li.minus,
+.less li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  border: 0;
+  color: #000;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: relative;
+  background-color: none;
+}
+
+.income {
+  background: none;
+  border: none;
+  font-style: italic;
+  margin-left: 10px;
+  background-color: #d6f2ff;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.expense {
+  background: none;
+  border: none;
+  font-style: italic;
+  margin-left: 35px;
+  background-color: #d6f2ff;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.expense:hover,
+.income:hover {
+  cursor: pointer;
+}
+
+.selectedIncome {
+  background-color: #23c75a;
+}
+
+.selectedExpense {
+  background-color: #dc2727;
+}
+
+.profile-header {
+  display: inline-block;
+}
+
+.nav-link {
+  color: #000;
+}
+
+.username-header,
+.password-header {
+  width: 130px;
+}
+
+.login {
+  text-align: center;
+}
+
+.welcome {
+  padding-top: 100px;
+  padding-bottom: 25px;
+  color: #23c75a;
+}
+
+.username,
+.password {
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.portfolio-code {
+  font-style: italic;
+  font-size: 1rem;
+  padding-bottom: 60px;
+}
+
+.login button {
+  background: none;
+  background-color: none;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin: 10px;
+  margin-top: 25px;
+  width: 175px;
+  background-image: linear-gradient(to right, #78f3a1 50%, #23c75a 100%);
+}
+
+.login button:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.username-taken,
+.too-short,
+.incorrect-info {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  color: #dc2727;
+}
+
+.navbar-expense {
+  color: #23c75a !important;
+}
