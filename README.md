@@ -10,7 +10,7 @@ This application will help you manage your income and expenses. You can create a
 
 ### Client side
 * React.js
-* HTMl
+* HTML
 * CSS
 * React-Bootstrap
 * Axios
@@ -19,7 +19,7 @@ This application will help you manage your income and expenses. You can create a
 ### Server side
 * Express.js
 * Mongoose
-* MongoDB as the database
+* MongoDB
 
 ## Getting Started
 
@@ -40,7 +40,7 @@ To visit this application follow the link [here] ()
 ```
 npm intall
 ```
-* once it is finished intalling run the following command 
+* once it is finished installing run the following command 
 ```
 npm run start
 ```
