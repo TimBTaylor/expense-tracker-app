@@ -48,5 +48,5 @@ npm run start
 
 ## Authors
 
-* Tim Taylor
+* Tim Taylor  
 [visit my linkedin](https://www.linkedin.com/in/tim-taylor-aaa970207/)
