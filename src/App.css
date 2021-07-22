@@ -243,7 +243,11 @@ input[type="text"],
 
 .username-taken,
 .too-short,
-.incorrect-info {
+.incorrect-info,
+.missing-source,
+.missing-type,
+.missing-amount,
+.incorrect-amount {
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
@@ -252,4 +256,8 @@ input[type="text"],
 
 .navbar-expense {
   color: #23c75a !important;
+}
+
+.hidden {
+  display: none;
 }

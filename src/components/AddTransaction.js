@@ -23,6 +23,14 @@ export const AddTransaction = () => {
   };
 
   const onSubmit = (e) => {
+    const incorrectAmount = document.querySelector(".incorrect-amount");
+    const missingAmount = document.querySelector(".missing-amount");
+    const missingType = document.querySelector(".missing-type");
+    const missingSource = document.querySelector(".missing-source");
+    missingType.classList.add("hidden");
+    missingAmount.classList.add("hidden");
+    missingSource.classList.add("hidden");
+    incorrectAmount.classList.add("hidden");
     e.preventDefault();
 
     const date = new Date();
@@ -35,33 +43,61 @@ export const AddTransaction = () => {
       return month + "/" + day + "/" + year;
     }
 
-    if (incomeExpense === "expense") {
-      const expense = "-";
-
-      const expenseTransaction = expense.concat(amount);
-
-      const transaction = {
-        id: Math.floor(Math.random() * 1000000000),
-        transactionType: text,
-        transactionAmount: expenseTransaction,
-        date: getFormattedDate(date),
-        source: incomeExpense,
-      };
-
-      if (text.length >= 1 && amount.length >= 1) {
-        addTransaction(transaction);
-      }
+    if (amount.match(/[a-zA-Z]/g) != null) {
+      console.log(true);
     } else {
-      const transaction = {
-        id: Math.floor(Math.random() * 1000000000),
-        transactionType: text,
-        transactionAmount: amount,
-        date: getFormattedDate(date),
-        source: incomeExpense,
-      };
+      console.log(false);
+    }
 
-      if (incomeExpense.length > 1 && text.length >= 1 && amount.length >= 1) {
-        addTransaction(transaction);
+    if (text === "") {
+      return missingType.classList.remove("hidden");
+    } else if (amount === "") {
+      return missingAmount.classList.remove("hidden");
+    } else if (amount.match(/[a-zA-Z]/g) != null) {
+      return incorrectAmount.classList.remove("hidden");
+    } else if (incomeExpense === "") {
+      return missingSource.classList.remove("hidden");
+    } else {
+      if (incomeExpense === "expense") {
+        const expense = "-";
+
+        const expenseTransaction = expense.concat(amount);
+
+        const transaction = {
+          id: Math.floor(Math.random() * 1000000000),
+          transactionType: text,
+          transactionAmount: expenseTransaction,
+          date: getFormattedDate(date),
+          source: incomeExpense,
+        };
+
+        if (text.length >= 1 && amount.length >= 1) {
+          addTransaction(transaction);
+          missingType.classList.add("hidden");
+          missingAmount.classList.add("hidden");
+          missingSource.classList.add("hidden");
+          incorrectAmount.classList.add("hidden");
+        }
+      } else {
+        const transaction = {
+          id: Math.floor(Math.random() * 1000000000),
+          transactionType: text,
+          transactionAmount: amount,
+          date: getFormattedDate(date),
+          source: incomeExpense,
+        };
+
+        if (
+          incomeExpense.length > 1 &&
+          text.length >= 1 &&
+          amount.length >= 1
+        ) {
+          addTransaction(transaction);
+          missingType.classList.add("hidden");
+          missingAmount.classList.add("hidden");
+          missingSource.classList.add("hidden");
+          incorrectAmount.classList.add("hidden");
+        }
       }
     }
   };
@@ -69,6 +105,12 @@ export const AddTransaction = () => {
   return (
     <div className="add-transaction">
       <h3>Add new transaction</h3>
+      <h4 className="missing-source hidden">Must choose expense or income</h4>
+      <h4 className="missing-type hidden">Must enter a transaction type</h4>
+      <h4 className="incorrect-amount hidden">
+        Amount must only container numbers and or a decimal
+      </h4>
+      <h4 className="missing-amount hidden">Must enter a amount</h4>
       <div className="form-control">
         <label htmlFor="text">Transaction Type</label>
         <input
