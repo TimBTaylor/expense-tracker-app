@@ -43,12 +43,6 @@ export const AddTransaction = () => {
       return month + "/" + day + "/" + year;
     }
 
-    if (amount.match(/[a-zA-Z]/g) != null) {
-      console.log(true);
-    } else {
-      console.log(false);
-    }
-
     if (text === "") {
       return missingType.classList.remove("hidden");
     } else if (amount === "") {
@@ -110,7 +104,7 @@ export const AddTransaction = () => {
       <h4 className="incorrect-amount hidden">
         Amount must only container numbers and or a decimal
       </h4>
-      <h4 className="missing-amount hidden">Must enter a amount</h4>
+      <h4 className="missing-amount hidden">Must enter an amount</h4>
       <div className="form-control">
         <label htmlFor="text">Transaction Type</label>
         <input
