@@ -1,6 +1,6 @@
 # Expense tracker
 
-I created this to help myself and other keep track of their expenses.
+I created this application to help myself and others keep track of their expenses.
 
 ## Description
 
