@@ -50,3 +50,6 @@ npm run start
 
 * Tim Taylor  
 [visit my linkedin](https://www.linkedin.com/in/tim-taylor-aaa970207/)
+
+
+![home screenshot](<img width="1424" alt="expense-home" src="https://user-images.githubusercontent.com/79194271/127051597-241f6c3b-18ee-4d48-b884-55e4e89fc320.png">)
