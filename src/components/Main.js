@@ -61,9 +61,9 @@ export const Main = () => {
             }
           )
           .then((res) => {
-            setLoggedIn(true);
             localStorage.setItem("username", res.data.username);
             localStorage.setItem("id", res.data._id);
+            setLoggedIn(true);
           })
           .catch((err) => {
             console.error(err);
