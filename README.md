@@ -51,9 +51,7 @@ npm run start
 * Tim Taylor  
 [visit my linkedin](https://www.linkedin.com/in/tim-taylor-aaa970207/)
 
-![home screenshot](https://user-images.githubusercontent.com/79194271/127051906-25119e3b-ab27-4340-b856-f74502310788.png)
+![home screenshot](https://user-images.githubusercontent.com/79194271/136660705-e5a082a4-439c-4145-9c30-2d87d77a5bce.png)
 
 
-![Transactions screenshot](https://user-images.githubusercontent.com/79194271/127051801-f69ed347-1e8a-44f1-bab9-95463c7cf47c.png)
-
-![login view](https://user-images.githubusercontent.com/79194271/127052009-b6e7a1fe-53e4-43a2-a528-fc3ca3f38598.png)
+![Transactions screenshot](https://user-images.githubusercontent.com/79194271/136660754-232fb402-83a6-4990-99a2-faa71cd7a256.png)
