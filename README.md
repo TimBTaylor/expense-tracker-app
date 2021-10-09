@@ -23,7 +23,7 @@ This application will help you manage your income and expenses. You can create a
 
 ## Getting Started
 
-To visit this application follow the link [here] (https://timbtaylor.github.io/expense-tracker-app/)
+To visit this application follow the link [here](https://timbtaylor.github.io/expense-tracker-app/)
 
 ### Dependencies
 
