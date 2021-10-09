@@ -8,6 +8,9 @@ import { GlobalProvider } from "../context/GlobalState";
 import { ProfileView } from "./ProfileView";
 import axios from "axios";
 import * as ReactBootStrap from "react-bootstrap";
+import LinkedIn from "../images/linkedin.png";
+import Github from "../images/github.png";
+import Portfolio from "../images/portfolio.png";
 
 export const Main = () => {
   const [loggedin, setLoggedIn] = useState(false);
@@ -58,7 +61,6 @@ export const Main = () => {
             }
           )
           .then((res) => {
-            console.log(res);
             setLoggedIn(true);
             localStorage.setItem("username", res.data.username);
             localStorage.setItem("id", res.data._id);
@@ -87,22 +89,18 @@ export const Main = () => {
       });
       const usernameIndex = users.indexOf(username);
       const passwordIndex = usersPasswords.indexOf(password);
-      if (
-        usernameIndex !== passwordIndex ||
-        usernameIndex < 0 ||
-        passwordIndex < 0
-      ) {
+      if (usernameIndex < 0 || passwordIndex < 0) {
         setIncorrectRegister(false);
         setIncorrectLogin(true);
         return console.log("log in failed");
       }
-      if (usernameIndex === passwordIndex) {
+      if (usersData[usernameIndex].password === password) {
+        localStorage.setItem("username", usersData[usernameIndex].username);
+        localStorage.setItem("password", usersData[passwordIndex].password);
+        localStorage.setItem("id", usersData[usernameIndex]._id);
         setLoggedIn(true);
         console.log("log in successful");
       }
-      localStorage.setItem("username", usersData[usernameIndex].username);
-      localStorage.setItem("password", usersData[passwordIndex].password);
-      localStorage.setItem("id", usersData[usernameIndex]._id);
     } else {
       setIncorrectRegister(false);
       setIncorrectLogin(true);
@@ -152,7 +150,8 @@ export const Main = () => {
             <ReactBootStrap.Container>
               <ReactBootStrap.Navbar.Brand
                 className="navbar-expense"
-                href="#home"
+                href="#"
+                onClick={goToHome}
               >
                 Expense Tracker
               </ReactBootStrap.Navbar.Brand>
@@ -206,34 +205,16 @@ export const Main = () => {
       ) : (
         <div className="login">
           <div className="welcome">
-            <h1>Welcome to Expense Tracker by Tim</h1>
+            <h1>Expense Tracker</h1>
           </div>
-          <h2 className="portfolio-code">
-            You can visit my portfolio{" "}
-            <span>
-              <a href="https://timbtaylor.github.io/personal-portfolio/">
-                here
-              </a>
-            </span>
-            <br />
-            as well as the code for this project{" "}
-            <span>
-              <a href="https://github.com/TimBTaylor/expense-tracker-app">
-                here
-              </a>
-            </span>
-          </h2>
-          <div className="login-warnings">
-            {usernameUsed}
-            {registrationFail}
-            {logInFail}
-          </div>
+          <div className="login-warnings"></div>
           <div className="login-inputs">
             <input
               className="username"
               onChange={(e) => setUserName(e.target.value)}
               placeholder="Username"
             />
+            {usernameUsed}
             <br />
             <input
               type="password"
@@ -241,10 +222,47 @@ export const Main = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
+            {registrationFail}
+            {logInFail}
             <br />
-            <button onClick={createUser}>Register</button>
-            <br />
+            <button onClick={createUser}>Register Account</button>
             <button onClick={logIn}>Log in</button>
+          </div>
+          <div className="links">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/tim-taylor-aaa970207/"
+              className="linkedin-link"
+            >
+              <img className="linkedin-image" src={LinkedIn} alt="linkedin" />
+              <br />
+              LinkedIn
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/TimBTaylor"
+              className="github-link"
+            >
+              <img className="github-image" src={Github} alt="github" />
+              <br />
+              Github
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://timbtaylor.github.io/personal-portfolio/"
+              className="portfolio-link"
+            >
+              <img
+                className="portfolio-image"
+                src={Portfolio}
+                alt="portfolio"
+              />
+              <br />
+              Portfolio
+            </a>
           </div>
         </div>
       )}
