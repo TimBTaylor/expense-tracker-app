@@ -137,6 +137,20 @@ export const Main = () => {
     setProfile(false);
   };
 
+  const deleteAccount = async () => {
+    const userId = localStorage.getItem("id");
+    try {
+      await axios({
+        method: "delete",
+        url: `https://expensetrackerbytim.herokuapp.com/expensetracker/${userId}`,
+      }).then(() => {
+        setLoggedIn(false);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       {loggedin ? (
@@ -191,7 +205,26 @@ export const Main = () => {
             </ReactBootStrap.Container>
           </ReactBootStrap.Navbar>
           {profile ? (
-            <ProfileView />
+            <>
+              <ProfileView />
+              <div className="logout-delete">
+                <button
+                  className="delete-account-button"
+                  onClick={() => deleteAccount()}
+                >
+                  Delete Account
+                </button>
+                <button
+                  className="logout-button"
+                  onClick={() => {
+                    setLoggedIn(false);
+                    setProfile(false);
+                  }}
+                >
+                  Logout
+                </button>
+              </div>
+            </>
           ) : (
             <div className="container">
               <Header />

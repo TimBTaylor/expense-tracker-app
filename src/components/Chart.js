@@ -39,6 +39,8 @@ export const Chart = () => {
   return (
     <div>
       <Pie
+        circumference="2"
+        className="pie"
         data={state}
         options={{
           title: {
