@@ -285,7 +285,7 @@ export const Main = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://timbtaylor.github.io/personal-portfolio/"
+              href="https://www.timbtaylor.com/"
               className="portfolio-link"
             >
               <img
